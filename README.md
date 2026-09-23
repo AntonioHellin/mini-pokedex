@@ -1,4 +1,4 @@
-# ⚡ Pokémon Pokédex App (`pokemon-pokedex-app`)
+# ⚡ Pokémon Pokédex App
 
 A high-performance visual encyclopedia for Generation I Pokémon built with Next.js App Router, React Server Components, Tailwind CSS, and the public PokéAPI.
 
@@ -7,11 +7,6 @@ A high-performance visual encyclopedia for Generation I Pokémon built with Next
 ## Project Overview
 
 **Pokémon Pokédex App** renders a dynamic, responsive encyclopedia of the original 151 Pokémon. Utilizing Next.js 14/15 React Server Components, Pokémon lists and detail pages are server-rendered with optimized caching and pure server-side state transitions between Grid and List viewing modes.
-
-### Repository Naming Analysis
-- **Recommended Repository Name**: `pokemon-pokedex-app`
-- **Naming Formula**: **Formula A** (`[domain/product]-[core-function]`)
-- **Rationale**: Replaces the arbitrary prefix in `mini-pokedex` with a standard kebab-case name specifying domain (`pokemon`) and deliverable function (`pokedex-app`).
 
 ---
 

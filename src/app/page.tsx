@@ -9,7 +9,7 @@ type Props = {
 export default async function Home({ searchParams }: Props) {
   const pokemonList = await getPokemonList();
   
-  // Soporte universal para `searchParams` asíncronas (Next.js 15) o síncronas (Next.js 14)
+  // Universal support for asynchronous (Next.js 15) or synchronous (Next.js 14) searchParams
   const resolvedParams = await Promise.resolve(searchParams);
   const viewMode = resolvedParams?.view === 'list' ? 'list' : 'card';
 
@@ -20,7 +20,7 @@ export default async function Home({ searchParams }: Props) {
           Pokédex
         </h1>
         <p className="mt-4 text-lg text-slate-400 font-medium max-w-2xl mx-auto">
-          Generación I. Explora la enciclopedia visual impulsada por Server Components.
+          Generation I. Explore the visual encyclopedia powered by React Server Components.
         </p>
       </header>
 
@@ -51,7 +51,7 @@ export default async function Home({ searchParams }: Props) {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            Lista
+            List
           </Link>
         </div>
       </div>

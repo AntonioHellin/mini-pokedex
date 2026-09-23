@@ -17,7 +17,7 @@ export default async function PokemonPage({ params }: { params: Promise<{ id: st
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          Volver a la Pokédex
+          Back to Pokédex
         </Link>
       </div>
 
@@ -62,17 +62,17 @@ export default async function PokemonPage({ params }: { params: Promise<{ id: st
           
           <div className="grid grid-cols-2 gap-6 mb-10">
             <div className="bg-slate-800/40 p-5 rounded-2xl border border-slate-800/80 text-center shadow-inner">
-              <span className="block text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Altura</span>
+              <span className="block text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Height</span>
               <span className="text-2xl font-black text-white">{pokemon.height / 10} m</span>
             </div>
             <div className="bg-slate-800/40 p-5 rounded-2xl border border-slate-800/80 text-center shadow-inner">
-              <span className="block text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Peso</span>
+              <span className="block text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Weight</span>
               <span className="text-2xl font-black text-white">{pokemon.weight / 10} kg</span>
             </div>
           </div>
 
           <div>
-            <h3 className="text-sm font-black text-slate-400 mb-6 uppercase tracking-widest">Estadísticas Base</h3>
+            <h3 className="text-sm font-black text-slate-400 mb-6 uppercase tracking-widest">Base Stats</h3>
             <div className="space-y-5">
               {pokemon.stats.map((statObj) => (
                 <div key={statObj.stat.name}>

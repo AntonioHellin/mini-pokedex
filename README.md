@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ Pokémon Pokédex App (`pokemon-pokedex-app`)
 
-## Getting Started
+A high-performance visual encyclopedia for Generation I Pokémon built with Next.js App Router, React Server Components, Tailwind CSS, and the public PokéAPI.
 
-First, run the development server:
+---
 
+## Project Overview
+
+**Pokémon Pokédex App** renders a dynamic, responsive encyclopedia of the original 151 Pokémon. Utilizing Next.js 14/15 React Server Components, Pokémon lists and detail pages are server-rendered with optimized caching and pure server-side state transitions between Grid and List viewing modes.
+
+### Repository Naming Analysis
+- **Recommended Repository Name**: `pokemon-pokedex-app`
+- **Naming Formula**: **Formula A** (`[domain/product]-[core-function]`)
+- **Rationale**: Replaces the arbitrary prefix in `mini-pokedex` with a standard kebab-case name specifying domain (`pokemon`) and deliverable function (`pokedex-app`).
+
+---
+
+## Features
+
+- **React Server Components (RSC)**: Data fetching executed securely on the server with `force-cache` optimization.
+- **Dual View Modes**: Seamless toggle between interactive visual Grid and compact tabular List layouts.
+- **Detailed Pokémon Profiles**: Comprehensive views displaying national Pokédex IDs, official artwork, elemental typings, metric height/weight, and animated base stat meters.
+- **Zero Client Waterfall**: Static assets and API responses resolved ahead of client delivery with instant response times.
+- **Responsive Dark Theme**: Modern slate palette with vibrant elemental accent gradients.
+
+---
+
+## Prerequisites
+
+- **Node.js**: `>= 18.17.0`
+- **Package Manager**: `npm`, `pnpm`, or `yarn`
+
+---
+
+## Installation and Run
+
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Start the Development Server
+```bash
+npm run dev
+```
+Navigate to `http://localhost:3000` in your web browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Build for Production
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Serve the Production Build
+```bash
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Configuration & External APIs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application communicates with the public PokéAPI REST endpoint:
+- **API Endpoint**: `https://pokeapi.co/api/v2`
+- **Sprites CDN**: `https://raw.githubusercontent.com/PokeAPI/sprites/master/...`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No API keys are required for default operation.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Defensive Security Architecture
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **URI Encoding & Input Validation**: Route and query parameters (`id`, `view`) are sanitized and validated with bounded pagination to eliminate injection or path traversal attempts.
+- **Next.js Image Domain Allowlisting**: Image loading is restricted to trusted GitHub PokéAPI sprite repositories configured in `next.config.ts`.
+- **Server-Side Data Isolation**: API calls occur server-side, eliminating browser token exposure and CORS vulnerabilities.
+
+---
+
+## License
+
+Proprietary. All rights reserved. Not licensed for redistribution, public sublicensing, or resale.

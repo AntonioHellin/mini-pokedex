@@ -69,7 +69,3 @@ No API keys are required for default operation.
 - **Server-Side Data Isolation**: API calls occur server-side, eliminating browser token exposure and CORS vulnerabilities.
 
 ---
-
-## License
-
-Proprietary. All rights reserved. Not licensed for redistribution, public sublicensing, or resale.
